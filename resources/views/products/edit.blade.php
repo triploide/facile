@@ -12,6 +12,7 @@
 	<div class="container">
 		<form action="/products/{{ $productModel->id }}" method="post">
 			{{ csrf_field() }}
+			{{ method_field('PATCH') }}
 			<div class="form-group">
 				<label>Nombre</label>
 				<input type="text" name="name" class="form-control" value="{{ $productModel->name }}">
@@ -31,6 +32,12 @@
 						<option value="{{$category->id}}">{{ $category->name }}</option>
 					@endforeach
 				</select>
+			</div>
+			<div class="form-group">
+				<label>Propiedades</label><br>
+				@foreach ($properties as $property)
+					<input type="checkbox" name="properties[]" value="{{$property->id}}" /> {{ $property->name }} <br>
+				@endforeach
 			</div>
 			<div class="form-group">
 				<input type="submit" name="Enviador" class="btn btn-primary">

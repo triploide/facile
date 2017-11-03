@@ -7,6 +7,6 @@ Route::get('/', function () {
 
 Route::get('products', 'ProductsController@index');
 Route::get('products/{id}/edit', 'ProductsController@edit');
-Route::post('products/{id}', 'ProductsController@update');
+Route::patch('products/{id}', 'ProductsController@update');
 
 

@@ -17,8 +17,9 @@
 			@foreach ($nombreVariable as $product)
 				<tr>
 					<td>{{ $product->name }}</td>
+					<td>{{ $product->category->name }}</td>
 					<td style="text-align: right;">
-						<a href="products/{{$product->id}}/edit" class="btn btn-success">
+						<a href="/products/{{$product->id}}/edit" class="btn btn-success">
 							<i class="fa fa-pencil"></i>
 						</a>
 						<a href="" class="btn btn-danger">
