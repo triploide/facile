@@ -15,6 +15,12 @@ class ProductsController extends Controller
     	return view('products.index', ['nombreVariable' => $products]);
     }
 
+    public function show($slug)
+    {
+        $productModel = Product::where('slug', $slug)->first();
+        return view('products.show', compact('productModel'));
+    }
+
     public function edit($id)
     {
     	$properties = Property::all();
